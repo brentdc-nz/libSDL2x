@@ -464,7 +464,7 @@ SDL_GetCPUCount(void)
             sysctlbyname("hw.ncpu", &SDL_CPUCount, &size, NULL, 0);
         }
 #endif
-#if 0//def __WIN32__
+#ifdef __WIN32__
         if (SDL_CPUCount <= 0) {
             SYSTEM_INFO info;
             GetSystemInfo(&info);
@@ -797,7 +797,7 @@ SDL_GetSystemRAM(void)
             }
         }
 #endif
-#if 0//def __WIN32__
+#ifdef __WIN32__
         if (SDL_SystemRAM <= 0) {
             MEMORYSTATUSEX stat;
             stat.dwLength = sizeof(stat);

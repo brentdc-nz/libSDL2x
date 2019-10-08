@@ -1996,7 +1996,7 @@ SDL_RenderDriver D3D_RenderDriver = {
 };
 #endif /* SDL_VIDEO_RENDER_D3D && !SDL_RENDER_DISABLED */
 
-#if 1//def __XBOX__
+#ifdef __XBOX__
 /* This function needs to always exist on Windows, for the Dynamic API. */
 IDirect3DDevice8 *
 SDL_RenderGetD3D9Device(SDL_Renderer * renderer)

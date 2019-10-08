@@ -30,7 +30,7 @@ Andreas Schiffler -- aschiffler at ferzkopp dot net
 */
 #include "../../SDL_internal.h"
 
-#if 0//defined(__WIN32__)
+#if defined(__WIN32__)
 #include "../../core/windows/SDL_windows.h"
 #endif
 

@@ -20,7 +20,7 @@
 */
 #include "../../SDL_internal.h"
 
-#if 1//SDL_THREAD_XBOX
+#if SDL_THREAD_XBOX
 
 /* Win32 thread management routines for SDL */
 
