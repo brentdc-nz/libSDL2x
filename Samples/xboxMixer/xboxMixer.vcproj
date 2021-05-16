@@ -186,7 +186,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="xapilib.lib d3d8.lib d3dx8.lib xgraphics.lib dsound.lib dmusic.lib xacteng.lib xsndtrk.lib xvoice.lib xonlines.lib xboxkrnl.lib"
+				AdditionalDependencies="xapilib.lib d3d8.lib d3dx8.lib xgraphics.lib dsound.lib dmusic.lib xacteng.lib xsndtrk.lib xvoice.lib xonlines.lib xboxkrnl.lib libSDL2x.lib libSDL2x_mixer.lib"
 				OutputFile="$(OutDir)/$(ProjectName).exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\libSDL2x_mixer\Release;..\..\Release"
