@@ -16,4 +16,4 @@ The port is still in pre-beta stages as it has only been tested with a few SDL2 
 
 ### Notes:
 
-Special thanks to marty28 for its port of SDL2 as well as Lantus/MVG and Hyper_Eye, their work on the SDL 1.2 port.
+Special thanks to AsayuGit the SDL2 Mixer addon port and fixes, as well as Lantus/MVG and Hyper_Eye, for their work on the SDL 1.2 port.
