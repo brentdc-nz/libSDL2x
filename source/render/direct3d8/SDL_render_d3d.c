@@ -114,9 +114,9 @@ typedef struct
 
 typedef struct
 {
-    float x, y, z;
-    DWORD color;
-    float u, v;
+    float x, y, z;	/* Vertex untransformed Position */
+    DWORD color;	/* Vertex color */
+    float u, v;		/* Texture Coordinates */
 } Vertex;
 
 static int
@@ -842,7 +842,8 @@ D3D_SetRenderTargetInternal(SDL_Renderer * renderer, SDL_Texture * texture)
     if(FAILED(result)) {
         return D3D_SetError("GetSurfaceLevel()", result);
     }
-
+	// FIXME ASAYU:
+	// IDirect3DDevice8_SetRenderTarget(D3DDevice *pThis, D3DSurface *pRenderTarget, D3DSurface *pNewZStencil)
     result = IDirect3DDevice8_SetRenderTarget(data->device, 0, data->currentRenderTarget);
     if(FAILED(result)) {
         return D3D_SetError("SetRenderTarget()", result);
@@ -944,7 +945,7 @@ D3D_QueueCopy(SDL_Renderer * renderer, SDL_RenderCommand *cmd, SDL_Texture * tex
 {
     const DWORD color = D3DCOLOR_ARGB(cmd->data.draw.a, cmd->data.draw.r, cmd->data.draw.g, cmd->data.draw.b);
     float minx, miny, maxx, maxy;
-//    float minu, maxu, minv, maxv;
+    float minu, maxu, minv, maxv;
     const size_t vertslen = sizeof (Vertex) * 4;
     Vertex *verts = (Vertex *) SDL_AllocateRenderVertices(renderer, vertslen, 0, &cmd->data.draw.first);
 
@@ -963,42 +964,51 @@ D3D_QueueCopy(SDL_Renderer * renderer, SDL_RenderCommand *cmd, SDL_Texture * tex
 	//        using a rect destination, needs some testing, it was correct
 	//        when it was set to clamp to edge before switching to linear
 	//		  textures. Works fine for what I've used so far.
+
+	/* ASAYU: While the following comment is correct according to the documentation
+			  It doesn't seem to work that way with this current implementation
+	*/
 /*
     minu = (float) srcrect->x / texture->w;
     maxu = (float) (srcrect->x + srcrect->w) / texture->w;
     minv = (float) srcrect->y / texture->h;
     maxv = (float) (srcrect->y + srcrect->h) / texture->h;
 */
+	minu = srcrect->x;
+    maxu = srcrect->x + srcrect->w;
+    minv = srcrect->y;
+    maxv = srcrect->y + srcrect->h;
+
     verts->x = minx;
     verts->y = miny;
     verts->z = 0.0f;
     verts->color = color;
-    verts->u = (float)0; //minu;
-    verts->v = (float)0; //minv;
+    verts->u = minu; //(float)0; //minu;
+    verts->v = minv; //(float)0; //minv;
     verts++;
 
     verts->x = maxx;
     verts->y = miny;
     verts->z = 0.0f;
     verts->color = color;
-    verts->u = (float)texture->w; //maxu;
-    verts->v = (float)0; //minv;
+    verts->u = maxu;//(float)texture->w; //maxu;
+    verts->v = minv;//(float)0; //minv;
     verts++;
 
     verts->x = maxx;
     verts->y = maxy;
     verts->z = 0.0f;
     verts->color = color;
-    verts->u = (float)texture->w; //maxu;
-    verts->v = (float)texture->h; //maxv;
+    verts->u = maxu;//(float)texture->w; //maxu;
+	verts->v = maxv;//(float)texture->h; //maxv;
     verts++;
 
     verts->x = minx;
     verts->y = maxy;
     verts->z = 0.0f;
     verts->color = color;
-    verts->u = (float)0; //minu;
-    verts->v = (float)texture->h; //maxv;
+    verts->u = minu;//(float)0; //minu;
+    verts->v = maxv;//(float)texture->h; //maxv;
     verts++;
 
     return 0;
