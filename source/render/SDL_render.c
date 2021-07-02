@@ -1219,7 +1219,7 @@ SDL_CreateTextureFromSurface(SDL_Renderer * renderer, SDL_Surface * surface)
     SDL_bool direct_update;
     int i;
     Uint32 format = SDL_PIXELFORMAT_UNKNOWN;
-    SDL_Texture *texture;
+    SDL_Texture *texture = NULL;
 
     CHECK_RENDERER_MAGIC(renderer, NULL);
 
