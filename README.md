@@ -2,7 +2,7 @@
 
 This is a port of SDL 2 to the orignal Xbox.
 
-The port is still in pre-beta stages as it has only been tested with a few SDL2 samples (lazyfoo.net) as well as marty28's port of DevilutionX
+The port has been tested with SDL2 samples (lazyfoo.net) as well as my port of DevilutionX
 
 ### SDL2 Todo:
 - Separate alpha blend.
