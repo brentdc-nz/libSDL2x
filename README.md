@@ -16,4 +16,4 @@ The port has been tested with SDL2 samples (lazyfoo.net) as well as my port of D
 
 ### Notes:
 
-Special thanks to AsayuGit the SDL2 Mixer addon port and fixes, as well as Lantus/MVG and Hyper_Eye, for their work on the SDL 1.2 port.
+Special thanks to AsayuGit the SDL2 Mixer addon port and fixes, as well as Lantus/MVG, Hyper_Eye and Wolf3s for their work on the SDL 1.2 port.

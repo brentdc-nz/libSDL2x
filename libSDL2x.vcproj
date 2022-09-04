@@ -1025,9 +1025,6 @@
 				RelativePath=".\include\SDL_vulkan.h">
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\ReadMe.txt">
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
