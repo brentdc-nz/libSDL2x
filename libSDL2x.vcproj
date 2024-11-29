@@ -21,7 +21,7 @@
 				Optimization="0"
 				OptimizeForProcessor="2"
 				AdditionalIncludeDirectories="include"
-				PreprocessorDefinitions="_DEBUG;_XBOX;__XBOX__;_LIB"
+				PreprocessorDefinitions="_DEBUG;_XBOX;__XBOX__;_LIB;XBOX_DEBUG_LOGGING"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -166,6 +166,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="include"
 				PreprocessorDefinitions="NDEBUG;_XBOX;LTCG;_LIB"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -829,6 +830,58 @@
 						RelativePath=".\source\haptic\dummy\SDL_syshaptic.c">
 					</File>
 				</Filter>
+			</Filter>
+			<Filter
+				Name="test"
+				Filter="">
+				<File
+					RelativePath=".\source\test\SDL_test_assert.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_common.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_compare.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_crc32.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_font.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_fuzzer.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_harness.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_imageBlit.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_imageBlitBlend.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_imageFace.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_imagePrimitives.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_imagePrimitivesBlend.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_log.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_md5.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_memory.c">
+				</File>
+				<File
+					RelativePath=".\source\test\SDL_test_random.c">
+				</File>
 			</Filter>
 		</Filter>
 		<Filter

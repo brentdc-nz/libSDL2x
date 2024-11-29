@@ -1,6 +1,6 @@
 # libSDL2x
 
-This is a port of SDL 2 to the orignal Xbox.
+This is a port of SDL 2.0.10 to the orignal Xbox.
 
 The port has been tested with SDL2 samples (lazyfoo.net) as well as my port of DevilutionX
 
